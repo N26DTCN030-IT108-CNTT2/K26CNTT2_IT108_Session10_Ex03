@@ -1,0 +1,3 @@
+Công thức tính Tên linh kiện tại ô tương ứng ở sheet Don_Hang:
+=IFERROR(VLOOKUP(A2, Danh_Muc!$A$2:$C$100, 2, FALSE), "Không tìm thấy")Công thức tính Đơn giá tại ô tương ứng ở sheet Don_Hang:
+=IFERROR(VLOOKUP(A2, Danh_Muc!$A$2:$C$100, 3, FALSE), "Không tìm thấy")Giải thích thêm:Việc thêm dấu $ vào vùng tham chiếu thành Danh_Muc!$A$2:$C$100 giúp cố định ô khi bạn kéo công thức xuống cho toàn bộ 100 dòng đơn hàng mà không bị lệch bảng.Việc kết hợp hàm IFERROR giúp các dòng không tìm thấy mã hoặc phát sinh lỗi trả về chữ "Không tìm thấy" một cách thân thiện thay vì hiển thị lỗi #N/A.Nếu dữ liệu bảng danh mục bị dính khoảng trắng ẩn ở mã linh kiện, bạn có thể lồng thêm hàm TRIM vào giá trị cần tìm, ví dụ: VLOOKUP(TRIM(A2), Danh_Muc!$A$2:$C$100, 2, FALSE).
